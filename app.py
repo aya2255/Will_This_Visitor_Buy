@@ -15,7 +15,7 @@ if not MODEL_PATH.exists():
     st.error("Model file not found. Run all cells in notebook.ipynb first to train and save the model.")
     st.stop()
 
-model = joblib.load(MODEL_PATH)
+model = joblib.load("purchase_intention_pipeline.joblib")
 
 with st.form("session_form"):
     st.markdown("### Browsing activity")
