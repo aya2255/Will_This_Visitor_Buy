@@ -2,7 +2,7 @@
 
 Predicting whether a website visitor will complete a purchase based on their browsing session features, enabling real-time engagement strategies to increase conversion rates.
 
-🌐 **Live Web App:** [Link to Deployed Streamlit App](YOUR_STREAMLIT_APP_URL_HERE)
+🌐 **Live Web App:** [Link to Deployed Streamlit App](https://willthisvisitorbuygit-yfssx8cczhjexzmgddnbkq.streamlit.app/)
 
 ---
 
