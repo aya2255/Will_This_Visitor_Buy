@@ -5,7 +5,7 @@ from pathlib import Path
 
 st.set_page_config(page_title="Purchase Intention Predictor", page_icon="🛍️", layout="centered")
 
-MODEL_PATH = Path("models/purchase_intention_pipeline.joblib")
+MODEL_PATH = Path("purchase_intention_pipeline.joblib")
 
 st.title("🛍️ Will This Visitor Buy?")
 st.subheader("E-commerce Purchase Intention Predictor")
