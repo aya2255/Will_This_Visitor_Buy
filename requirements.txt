@@ -6,3 +6,4 @@ scikit-learn
 ucimlrepo
 joblib
 streamlit
+plotly
