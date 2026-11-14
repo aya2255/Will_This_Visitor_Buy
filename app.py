@@ -7,7 +7,7 @@ import plotly.express as px
 # 1. Page Configuration
 st.set_page_config(
     page_title="Purchase Intention Predictor 🛍️", 
-    page_icon="💖", 
+
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -52,7 +52,7 @@ st.markdown("""
 MODEL_PATH = Path("purchase_intention_pipeline.joblib")
 
 # Header Section
-st.markdown("<h1 style='text-align: center; color: #be185d;'>💖 Will This Visitor Buy? 🛍️</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: #be185d;'> Will This Visitor Buy? 🛍️</h1>", unsafe_allow_html=True)
 st.markdown("<p style='text-align: center; color: #9f1239; font-size: 1.1rem;'>E-commerce Purchase Intention Predictor • Smart Real-Time Analysis</p>", unsafe_allow_html=True)
 st.markdown("---")
 
@@ -64,12 +64,12 @@ model = joblib.load(MODEL_PATH)
 
 # Form for Inputs
 with st.form("session_form"):
-    st.markdown("### ✨ Browsing Activity & Session Details")
+    st.markdown("###  Browsing Activity & Session Details")
     
     col1, col2, col3 = st.columns(3)
     
     with col1:
-        st.markdown("#### 📁 Navigation")
+        st.markdown("####  Navigation")
         administrative = st.number_input("Administrative pages", min_value=0, value=1)
         administrative_duration = st.number_input("Administrative time (s)", min_value=0.0, value=20.0)
         informational = st.number_input("Informational pages", min_value=0, value=0)
@@ -86,7 +86,7 @@ with st.form("session_form"):
         month = st.selectbox("Month", ["Feb", "Mar", "May", "June", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"])
 
     with col3:
-        st.markdown("#### 💻 Technical & Visitor Info")
+        st.markdown("####  Technical & Visitor Info")
         operating_systems = st.selectbox("Operating system code", list(range(1, 9)), index=1)
         browser = st.selectbox("Browser code", list(range(1, 14)), index=1)
         region = st.selectbox("Region code", list(range(1, 10)), index=0)
@@ -95,7 +95,7 @@ with st.form("session_form"):
         weekend = st.selectbox("Weekend visit?", [False, True])
 
     st.markdown("")
-    submitted = st.form_submit_button("🎀 Predict Purchase Intention", use_container_width=True)
+    submitted = st.form_submit_button(" Predict Purchase Intention", use_container_width=True)
 
 # Results and Smooth Curve Chart Section
 if submitted:
@@ -127,14 +127,14 @@ if submitted:
     res_col1, res_col2 = st.columns([1, 1], gap="large")
     
     with res_col1:
-        st.subheader("🎯 Prediction Result")
+        st.subheader(" Prediction Result")
         st.metric("Estimated purchase probability", f"{probability:.1%}")
         
         if prediction == 1:
-            st.success("💖 The model predicts that this session is likely to end with a purchase!")
+            st.success(" The model predicts that this session is likely to end with a purchase!")
             st.markdown("**Suggested action:** Prioritize a smooth checkout experience and avoid unnecessary interruptions.")
         else:
-            st.warning("🤍 The model predicts that this session is less likely to end with a purchase.")
+            st.warning(" The model predicts that this session is less likely to end with a purchase.")
             st.markdown("**Suggested action:** Consider helpful product recommendations, targeted coupons, or customer support.")
         
         st.caption("This is a machine-learning estimate, not a guarantee. Results depend on the training data and model quality.")
@@ -161,7 +161,7 @@ if submitted:
         st.plotly_chart(fig, use_container_width=True)
 
 else:
-    st.info("💡 Fill in the session details above and click **'🎀 Predict Purchase Intention'** to view real-time results and smooth curves.")
+    st.info("💡 Fill in the session details above and click **' Predict Purchase Intention'** to view real-time results and smooth curves.")
 
 # Footer
 st.markdown("---")
